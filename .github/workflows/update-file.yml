@@ -15,7 +15,7 @@ jobs:
 
       - name: Download file from URL
         run: |
-          curl -sSL https://svip.365cloud.me/api/v1/client/subscribe?token=3e4c357717b14920206609a28ceb389f
+          curl -sSL -o new https://svip.365cloud.me/api/v1/client/subscribe?token=3e4c357717b14920206609a28ceb389f
 
       - name: Commit changes
         run: |
