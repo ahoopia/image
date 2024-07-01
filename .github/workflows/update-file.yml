@@ -1,0 +1,29 @@
+name: Update File from URL
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 每五分钟执行一次
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download file from URL
+        run: |
+          curl -sSL -o new.yml https://svip.365cloud.me/api/v1/client/subscribe?token=3e4c357717b14920206609a28ceb389f
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add new.yml
+          git commit -m "Update file from URL"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
