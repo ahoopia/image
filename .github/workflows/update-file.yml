@@ -15,13 +15,13 @@ jobs:
 
       - name: Download file from URL
         run: |
-          curl -sSL -o new.yml https://svip.365cloud.me/api/v1/client/subscribe?token=3e4c357717b14920206609a28ceb389f
+          curl -sSL https://svip.365cloud.me/api/v1/client/subscribe?token=3e4c357717b14920206609a28ceb389f
 
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add new.yml
+          git add .
           git commit -m "Update file from URL"
       
       - name: Push changes
