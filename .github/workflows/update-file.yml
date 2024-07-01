@@ -1,6 +1,7 @@
 name: Update File from URL
 
 on:
+  workflow_dispatch: 
   schedule:
     - cron: '*/5 * * * *'  # 每五分钟执行一次
 
