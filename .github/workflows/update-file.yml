@@ -17,6 +17,9 @@ jobs:
         run: |
           curl -sSL -o new https://svip.365cloud.me/api/v1/client/subscribe?token=3e4c357717b14920206609a28ceb389f
 
+      - name: Base64 decode the file
+        run: |
+          base64 -d new > decoded_file.yml
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
