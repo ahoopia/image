@@ -138,6 +138,7 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 rules:
+    - 'RULE-SET,reject,REJECT'
     - 'DOMAIN-SUFFIX,openai.com,openai'  # OpenAI 服务域名
     - 'DOMAIN-SUFFIX,chat.openai.com,openai'  # ChatGPT 服务域名
     - 'DOMAIN-SUFFIX,api.openai.com,openai'  # OpenAI API
