@@ -46,6 +46,97 @@ proxy-groups:
     - { name: openai, type: select, proxies: [自动选择, 故障转移, '剩余流量：68 GB', 套餐到期：2024-08-18, '🇭🇰 HK 香港 01 Pro', '🇭🇰 HK 香港 02 Pro', '🇭🇰 HK 香港 03 Pro', '🇭🇰 HK 香港 04 Pro', '🇭🇰 HK 香港 05 Pro [×2]', '🇭🇰 HK 香港 06 Pro [×2]', '🇸🇬 SG 新加坡 01 Pro', '🇸🇬 SG 新加坡 02 Pro', '🇸🇬 SG 新加坡 03 Pro', '🇸🇬 SG 新加坡 04 Pro', '🇸🇬 SG 新加坡 05 [×0.6]', '🇸🇬 SG 新加坡 06 [×0.6]', '🇨🇳 TW 台湾 01 Pro', '🇨🇳 TW 台湾 02 Pro', '🇨🇳 TW 台湾 03 Pro', '🇯🇵 JP 日本 01 Pro', '🇯🇵 JP 日本 02 Pro', '🇯🇵 JP 日本 03 Pro', '🇺🇸 US 美国 01 Pro', '🇺🇸 US 美国 02 Pro', '🇺🇸 US 美国 03 Pro [×0.8]', '🇰🇷 KR 韩国 01', '🇰🇷 KR 韩国 02', '🇰🇷 KR 韩国 03'] }
     - { name: 自动选择, type: url-test, proxies: ['剩余流量：68 GB', 套餐到期：2024-08-18, '🇭🇰 HK 香港 01 Pro', '🇭🇰 HK 香港 02 Pro', '🇭🇰 HK 香港 03 Pro', '🇭🇰 HK 香港 04 Pro', '🇭🇰 HK 香港 05 Pro [×2]', '🇭🇰 HK 香港 06 Pro [×2]', '🇸🇬 SG 新加坡 01 Pro', '🇸🇬 SG 新加坡 02 Pro', '🇸🇬 SG 新加坡 03 Pro', '🇸🇬 SG 新加坡 04 Pro', '🇸🇬 SG 新加坡 05 [×0.6]', '🇸🇬 SG 新加坡 06 [×0.6]', '🇨🇳 TW 台湾 01 Pro', '🇨🇳 TW 台湾 02 Pro', '🇨🇳 TW 台湾 03 Pro', '🇯🇵 JP 日本 01 Pro', '🇯🇵 JP 日本 02 Pro', '🇯🇵 JP 日本 03 Pro', '🇺🇸 US 美国 01 Pro', '🇺🇸 US 美国 02 Pro', '🇺🇸 US 美国 03 Pro [×0.8]', '🇰🇷 KR 韩国 01', '🇰🇷 KR 韩国 02', '🇰🇷 KR 韩国 03'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: 故障转移, type: fallback, proxies: ['剩余流量：68 GB', 套餐到期：2024-08-18, '🇭🇰 HK 香港 01 Pro', '🇭🇰 HK 香港 02 Pro', '🇭🇰 HK 香港 03 Pro', '🇭🇰 HK 香港 04 Pro', '🇭🇰 HK 香港 05 Pro [×2]', '🇭🇰 HK 香港 06 Pro [×2]', '🇸🇬 SG 新加坡 01 Pro', '🇸🇬 SG 新加坡 02 Pro', '🇸🇬 SG 新加坡 03 Pro', '🇸🇬 SG 新加坡 04 Pro', '🇸🇬 SG 新加坡 05 [×0.6]', '🇸🇬 SG 新加坡 06 [×0.6]', '🇨🇳 TW 台湾 01 Pro', '🇨🇳 TW 台湾 02 Pro', '🇨🇳 TW 台湾 03 Pro', '🇯🇵 JP 日本 01 Pro', '🇯🇵 JP 日本 02 Pro', '🇯🇵 JP 日本 03 Pro', '🇺🇸 US 美国 01 Pro', '🇺🇸 US 美国 02 Pro', '🇺🇸 US 美国 03 Pro [×0.8]', '🇰🇷 KR 韩国 01', '🇰🇷 KR 韩国 02', '🇰🇷 KR 韩国 03'], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  google:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  applications:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
 rules:
     - 'DOMAIN-SUFFIX,openai.com,openai'  # OpenAI 服务域名
     - 'DOMAIN-SUFFIX,chat.openai.com,openai'  # ChatGPT 服务域名
