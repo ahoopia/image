@@ -19,8 +19,16 @@ if [ -z "$line_numbers" ]; then
   exit 1
 fi
 
+# 将 line_numbers 转换为数组
+mapfile -t line_numbers_array <<< "$line_numbers"
+
 # 遍历所有找到的行号并打印上下文
-for line_number in $line_numbers; do
+for line_number in "${line_numbers_array[@]}"; do
+  # 检查 line_number 是否为有效的数字
+  if ! [[ "$line_number" =~ ^[0-9]+$ ]]; then
+    echo "Invalid line number: $line_number"
+    continue
+  fi
 
   # 计算上下文范围
   start_line=$((line_number - 10))
