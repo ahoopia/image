@@ -36,8 +36,12 @@ echo "$line_numbers" | while IFS= read -r line_number; do
     start_line=1
   fi
 
-  # 使用 awk 打印上下文
+  # 使用 awk 打印上下文（包括行号）
   echo "Context for keyword '$keyword' at line $line_number:"
-  awk -v start="$start_line" -v end="$end_line" 'NR >= start && NR <= end' "$config_file"
+  awk -v start="$start_line" -v end="$end_line" '
+    NR >= start && NR <= end {
+      print NR ": " $0
+    }
+  ' "$config_file"
   echo "----------------------------------------"
 done
