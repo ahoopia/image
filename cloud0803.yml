@@ -1,0 +1,753 @@
+allow-lan: true
+cfw-bypass:
+- localhost
+- 127.*
+- 10.*
+- 172.16.*
+- 172.17.*
+- 172.18.*
+- 172.19.*
+- 172.20.*
+- 172.21.*
+- 172.22.*
+- 172.23.*
+- 172.24.*
+- 172.25.*
+- 172.26.*
+- 172.27.*
+- 172.28.*
+- 172.29.*
+- 172.30.*
+- 172.31.*
+- 192.168.*
+- <local>
+dns:
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
+  - dns.msftncsi.com
+  - www.msftncsi.com
+  - www.msftconnecttest.com
+  - stun.*.*.*
+  - stun.*.*
+  - miwifi.com
+  - music.163.com
+  - '*.music.163.com'
+  - '*.126.net'
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - joox.com
+  - y.qq.com
+  - '*.y.qq.com'
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - '*.xiami.com'
+  - '*.music.migu.cn'
+  - music.migu.cn
+  - netis.cc
+  - router.asus.com
+  - repeater.asus.com
+  - routerlogin.com
+  - routerlogin.net
+  - tendawifi.com
+  - tendawifi.net
+  - tplinklogin.net
+  - tplinkwifi.net
+  - tplinkrepeater.net
+  - '*.ntp.org.cn'
+  - '*.openwrt.pool.ntp.org'
+  - '*.msftconnecttest.com'
+  - '*.msftncsi.com'
+  - localhost.ptlogin2.qq.com
+  - '*.*.*.srv.nintendo.net'
+  - '*.*.stun.playstation.net'
+  - xbox.*.*.microsoft.com
+  - '*.ipv6.microsoft.com'
+  - '*.*.xboxlive.com'
+  - speedtest.cros.wr.pvp.net
+  fake-ip-range: 198.18.0.1/16
+  fallback:
+  - tls://101.101.101.101:853
+  - https://101.101.101.101/dns-query
+  - https://public.dns.iij.jp/dns-query
+  - https://208.67.220.220/dns-query
+  fallback-filter:
+    domain:
+    - +.google.com
+    - +.facebook.com
+    - +.twitter.com
+    - +.youtube.com
+    - +.xn--ngstr-lra8j.com
+    - +.google.cn
+    - +.googleapis.cn
+    - +.googleapis.com
+    - +.gvt1.com
+    - +.paoluz.com
+    - +.paoluz.link
+    - +.paoluz.xyz
+    - +.sodacity-funk.xyz
+    - +.nloli.xyz
+    - +.jsdelivr.net
+    - +.proton.me
+    geoip: true
+    ipcidr:
+    - 240.0.0.0/4
+    - 0.0.0.0/32
+    - 127.0.0.1/32
+  ipv6: true
+  nameserver:
+  - tls://223.5.5.5:853
+  - https://223.6.6.6/dns-query
+  - https://120.53.53.53/dns-query
+external-controller: 127.0.0.1:9090
+log-level: info
+mode: Rule
+port: 7890
+proxies:
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  port: 3854
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.195.243
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  port: 8886
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.192.94
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  port: 3854
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.99.244
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  port: 3854
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.98.22
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  port: 8886
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.99.148
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  port: 8886
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.99.38
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  port: 3854
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.98.222
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  port: 8886
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 162.159.192.43
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  port: 8886
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.96.235
+  type: wireguard
+  udp: true
+- ip: 172.16.0.2
+  mtu: 1280
+  name: ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  port: 8886
+  private-key: mMVJKCxsIhqe9EDefgRA4kSZO4c22FyxfQHRQf3UMFM=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  remote-dns-resolve: true
+  server: 188.114.98.189
+  type: wireguard
+  udp: true
+proxy-groups:
+- name: ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  proxies:
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- interval: 300
+  name: ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  proxies:
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+- name: ðŸ‘‰ å›½å†…ç½‘ç«™
+  proxies:
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ‘‰ å›½å¤–ç½‘ç«™
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ¤– OPENAI
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ‘‰ ä¾‹å¤–ç½‘ç«™
+  proxies:
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“² èŠå¤©è½¯ä»¶
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŒ æ—¥éŸ©åª’ä½“
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŒ æ¸¯å°åª’ä½“
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŒ å›½å¤–åª’ä½“
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“¹ YouTube
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŽµ Spotify
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŽ¬ NETFLIX
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŽ¬ Disney+
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŽ¬ HBO
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŽ¬ Prime
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“º Emby
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“º TikTok
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“º å·´å“ˆå§†ç‰¹
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“º å“”å“©å“”å“©
+  proxies:
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“º çˆ±å¥‡è‰º
+  proxies:
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŽ è‹¹æžœæœåŠ¡
+  proxies:
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ§© å¾®è½¯æœåŠ¡
+  proxies:
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŽ® æ¸¸æˆå¹³å°
+  proxies:
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ“¥ BT & PT
+  proxies:
+  - ðŸŒ å…¨çƒç›´è¿ž
+  - ðŸŒ èŠ‚ç‚¹é€‰æ‹©
+  - ðŸ’¡ è‡ªåŠ¨é€‰æ‹©
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸŒ å…¨çƒç›´è¿ž
+  proxies:
+  - DIRECT
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸ›¡ å…¨çƒæ‹¦æˆª
+  proxies:
+  - REJECT
+  - DIRECT
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+- name: ðŸƒ åº”ç”¨å‡€åŒ–
+  proxies:
+  - REJECT
+  - DIRECT
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-1
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-2
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-3
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-4
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-5
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-6
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-7
+  - ðŸ‡ºðŸ‡¸ US-CF-WARP-8
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-9
+  - ðŸ‡³ðŸ‡± NL-CF-WARP-10
+  type: select
+rules:
+- DOMAIN-SUFFIX,ol.epicgames.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,epicgames.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,helpshift.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,paragon.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,unrealengine.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,fanatical.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,humblebundle.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steam-chat.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamcommunity.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steampowered.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamstatic.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,csgo.wmsj.cn,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,dl.steam.ksyna.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,dota2.wmsj.cn,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,st.dl.bscstorage.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,st.dl.eccdnx.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,st.dl.pinyuncloud.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamcontent.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamgames.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steampowered.com.8686c.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamstat.us,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamstatic.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamusercontent.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-KEYWORD,rockstargames,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,a.rsg.sc,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,gamedownloads-rockstargames-com.akamaized.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,media-rockstargames-com.akamaized.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,videos-rockstargames-com.akamaized.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,rockstarsupport.goquiq.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,ocsp.entrust.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,stats.g.doubleclick.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN,static.quiq-cdn.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,recaptcha.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,rockstargames.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,playstation.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,playstation.net,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,playstationnetwork.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,sony.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,sonyentertainmentnetwork.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,measurement.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-SUFFIX,nintendo.com,ðŸŽ® æ¸¸æˆå¹³å°
+- DOMAIN-KEYWORD,beetalk,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,t.me,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,tdesktop.com,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,telegram.me,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,telegram.org,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,telesco.pe,ðŸ“² èŠå¤©è½¯ä»¶
+- IP-CIDR,91.108.0.0/16,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,109.239.140.0/24,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,149.154.160.0/20,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR6,2001:67c:4e8::/48,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR6,2001:b28:f23d::/48,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR6,2001:b28:f23f::/48,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- DOMAIN-KEYWORD,whatsapp,ðŸ“² èŠå¤©è½¯ä»¶
+- IP-CIDR,18.194.0.0/15,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,34.224.0.0/12,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,54.242.0.0/15,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,50.22.198.204/30,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,208.43.122.128/27,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,108.168.174.0/16,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,173.192.231.32/27,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,158.85.5.192/27,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,174.37.243.0/16,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,158.85.46.128/27,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,173.192.222.160/27,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,184.173.128.0/17,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,158.85.224.160/27,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- DOMAIN-SUFFIX,lin.ee,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,line-apps.com,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,line-cdn.net,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,line-scdn.net,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,line.me,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,line.naver.jp,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,nhncorp.jp,ðŸ“² èŠå¤©è½¯ä»¶
+- IP-CIDR,103.2.28.0/24,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,103.2.30.0/23,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,119.235.224.0/24,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,119.235.232.0/24,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,119.235.235.0/24,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,119.235.236.0/23,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,147.92.128.0/17,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,203.104.128.0/19,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- DOMAIN-SUFFIX,kakao.com,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,kakao.co.kr,ðŸ“² èŠå¤©è½¯ä»¶
+- DOMAIN-SUFFIX,kakaocdn.net,ðŸ“² èŠå¤©è½¯ä»¶
+- IP-CIDR,1.201.0.0/24,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,27.0.236.0/22,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,103.27.148.0/22,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,103.246.56.0/22,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,110.76.140.0/22,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- IP-CIDR,113.61.104.0/22,ðŸ“² èŠå¤©è½¯ä»¶,no-resolve
+- DOMAIN-SUFFIX,clubhouseapi.com,ðŸ“² èŠå¤©è½¯ä»¶,Clubhouse
+- DOMAIN-SUFFIX,jo
