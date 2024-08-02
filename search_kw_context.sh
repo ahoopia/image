@@ -11,7 +11,7 @@ config_file=$1
 keyword=$2
 
 # 使用 grep 找到所有关键字的行号
-line_numbers=$(grep -n "$keyword" "$config_file" | cut -d: -f1)
+line_numbers=$(grep -n "$keyword" "$config_file" | awk -F: '{print $1}')
 
 # 如果没有找到关键字，退出脚本
 if [ -z "$line_numbers" ]; then
@@ -21,6 +21,12 @@ fi
 
 # 遍历所有找到的行号并打印上下文
 for line_number in $line_numbers; do
+  # 检查 line_number 是否为有效的数字
+  if ! [[ "$line_number" =~ ^[0-9]+$ ]]; then
+    echo "Invalid line number: $line_number"
+    continue
+  fi
+
   # 计算上下文范围
   start_line=$((line_number - 10))
   end_line=$((line_number + 10))
@@ -32,6 +38,6 @@ for line_number in $line_numbers; do
 
   # 使用 awk 打印上下文
   echo "Context for keyword '$keyword' at line $line_number:"
-  awk "NR >= $start_line && NR <= $end_line" "$config_file"
+  awk -v start=$start_line -v end=$end_line 'NR >= start && NR <= end' "$config_file"
   echo "----------------------------------------"
 done
