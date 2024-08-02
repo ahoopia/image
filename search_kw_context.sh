@@ -32,12 +32,12 @@ for line_number in $line_numbers; do
   end_line=$((line_number + 10))
 
   # 确保起始行不小于1
-  if [ $start_line -lt 1 ]; then
+  if [ "$start_line" -lt 1 ]; then
     start_line=1
   fi
 
   # 使用 awk 打印上下文
   echo "Context for keyword '$keyword' at line $line_number:"
-  awk -v start=$start_line -v end=$end_line 'NR >= start && NR <= end' "$config_file"
+  awk -v start="$start_line" -v end="$end_line" 'NR >= start && NR <= end' "$config_file"
   echo "----------------------------------------"
 done
