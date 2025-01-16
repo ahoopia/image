@@ -9,5 +9,5 @@ function FindProxyForURL(url, host) {
     //}
 
     // 如果都不可用，直接连接
-    return "192.168.18.44:7890;DIRECT";
+    return "socks5 192.168.18.44:7890;DIRECT";
 }
