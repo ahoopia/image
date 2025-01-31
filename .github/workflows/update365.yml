@@ -1,0 +1,38 @@
+name: Update Clash Subscription
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 每天 00:00 UTC 执行
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update-subscription:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # 避免权限问题
+
+      - name: 设置环境
+        run: |
+          sudo apt update
+          sudo apt install -y curl yq moreutils
+
+      - name: 运行脚本
+        run: |
+          chmod +x update_subscription.sh
+          ./update_subscription.sh
+
+      - name: 配置 Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 提交并推送更改
+        run: |
+          git add modified_subscription.yaml
+          git commit -m "更新 Clash 订阅 YAML 文件" || exit 0
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
