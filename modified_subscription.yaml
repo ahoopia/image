@@ -92,7 +92,6 @@ proxy-groups:
       '🇸🇬 SG 新加坡 04 Pro', '🇸🇬 SG 新加坡 05 Pro', '🇸🇬 SG 新加坡 06 Pro', '🇸🇬 SG 新加坡 备 Pro',
       '🇸🇬 SG 新加坡 备 II Pro', '🇯🇵 JP 日本 01 Pro', '🇯🇵 JP 日本 02 Pro', '🇯🇵 JP 日本 03 Pro',
       '🇺🇸 US 美国 01 Pro', '🇺🇸 US 美国 02 Pro', '🇨🇳 TW 台湾 Pro', '🇰🇷 KR 韩国 Pro']}
----
 rule-providers:
   reject: {type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/reject.txt?sign=tPqDS1sQ8pX2ro02KKTMKkxxzcNACT3llc9EgdORfRE=:0',
     path: ./ruleset/reject.yaml, interval: 86400}
@@ -120,7 +119,6 @@ rule-providers:
     path: ./ruleset/lancidr.yaml, interval: 86400}
   applications: {type: http, behavior: classical, url: 'https://alist.365ip.net/d/clash-rules/applications.txt?sign=aJ1yNoIioJeheBgxMPFLvUg8WdIuhKANS-YLjG_DgAc=:0',
     path: ./ruleset/applications.yaml, interval: 86400}
----
 rules:
   - 'DOMAIN-SUFFIX,mushroomtrack.com,DIRECT'
   - 'DOMAIN-SUFFIX,sixyik.com,DIRECT'
