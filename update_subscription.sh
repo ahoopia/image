@@ -59,6 +59,7 @@ EOF
 yq -Y '.' "$TEMP_FILE" "$RULE_PROVIDERS_FILE" "$RULES_FILE" > "$TEMP_FILE.tmp" && mv "$TEMP_FILE.tmp" "$TEMP_FILE"
 
 # 6. 输出最终 YAML 文件
+sed -i '/^---$/d' "$TEMP_FILE"
 OUTPUT_FILE="modified_subscription.yaml"
 mv "$TEMP_FILE" "$OUTPUT_FILE"
 
