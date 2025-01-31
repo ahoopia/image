@@ -16,19 +16,96 @@ RULES_FILE=$(mktemp)
 
 cat > "$RULE_PROVIDERS_FILE" <<EOF
 rule-providers:
-    reject: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/reject.txt?sign=tPqDS1sQ8pX2ro02KKTMKkxxzcNACT3llc9EgdORfRE=:0', path: ./ruleset/reject.yaml, interval: 86400 }
-    icloud: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/icloud.txt?sign=aR6hxsIVu2qn765nav3J3ltWKrGAA45SiQWN7cTjvtM=:0', path: ./ruleset/icloud.yaml, interval: 86400 }
-    apple: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/apple.txt?sign=-RS5BOYeEMfgkUA_OTExA0PepsUF8C_hbsaruWZYnsw=:0', path: ./ruleset/apple.yaml, interval: 86400 }
-    google: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/google.txt?sign=zhZ-t21SFJYTWEtM0la5v8cVRuVLXN-JNcGNg_ygRLU=:0', path: ./ruleset/google.yaml, interval: 86400 }
-    proxy: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/proxy.txt?sign=ZYFsIWaa9Qp44cGuPvv0kZZhq5QX6UsKj_I4vQwqRFo=:0', path: ./ruleset/proxy.yaml, interval: 86400 }
-    direct: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/direct.txt?sign=xoRLjmTpBDJ1YP-CKt5x2XCPIsSKEss4QW6HRQToWuI=:0', path: ./ruleset/direct.yaml, interval: 86400 }
-    private: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/private.txt?sign=Nt_aIZWDAoW6G7wjXdl0Do-fvMJ6U87VeuRlJ511v5o=:0', path: ./ruleset/private.yaml, interval: 86400 }
-    gfw: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/gfw.txt?sign=nwKfNQw6tUXfVNDG8y1nokzBWIQka2W-KhbQUF0RooI=:0', path: ./ruleset/gfw.yaml, interval: 86400 }
-    tld-not-cn: { type: http, behavior: domain, url: 'https://alist.365ip.net/d/clash-rules/tld-not-cn.txt?sign=pcIqgqqnqhu_N6vHjjM91aHniGSBKc_rcAp0sqaqV_I=:0', path: ./ruleset/tld-not-cn.yaml, interval: 86400 }
-    telegramcidr: { type: http, behavior: ipcidr, url: 'https://alist.365ip.net/d/clash-rules/telegramcidr.txt?sign=mil6mlysw9Mw_CHBsMK7Et5g_xjNshhddNDE5TMeP08=:0', path: ./ruleset/telegramcidr.yaml, interval: 86400 }
-    cncidr: { type: http, behavior: ipcidr, url: 'https://alist.365ip.net/d/clash-rules/cncidr.txt?sign=S5AZ7lnTepgmdLWJg-Ru5eshMSsTHhqz3DSURjRIVkc=:0', path: ./ruleset/cncidr.yaml, interval: 86400 }
-    lancidr: { type: http, behavior: ipcidr, url: 'https://alist.365ip.net/d/clash-rules/lancidr.txt?sign=5c0dcZR8uwUKPIVFaaP0R7YDbyhe0L45vxQfruAyF28=:0', path: ./ruleset/lancidr.yaml, interval: 86400 }
-    applications: { type: http, behavior: classical, url: 'https://alist.365ip.net/d/clash-rules/applications.txt?sign=aJ1yNoIioJeheBgxMPFLvUg8WdIuhKANS-YLjG_DgAc=:0', path: ./ruleset/applications.yaml, interval: 86400 }
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  google:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  applications:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
 EOF
 
 cat > "$RULES_FILE" <<EOF
