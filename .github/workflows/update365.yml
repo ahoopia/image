@@ -27,10 +27,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-      - name: 提交并推送更改
+      - name: 提交
         run: |
           git add modified_subscription.yaml
           git commit -m "更新 Clash 订阅 YAML 文件" || exit 0
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 推送
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
