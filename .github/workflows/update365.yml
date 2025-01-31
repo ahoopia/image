@@ -16,7 +16,6 @@ jobs:
 
       - name: 设置环境
         run: |
-          sudo apt update
           sudo apt install -y curl yq moreutils
 
       - name: 运行脚本
