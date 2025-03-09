@@ -9,5 +9,5 @@ function FindProxyForURL(url, host) {
     //}
 
     // 如果都不可用，直接连接
-    return "SOCKS 192.168.18.4:7890;SOCKS 192.168.18.4:7890;DIRECT";
+    return "PROXY 192.168.18.4:7890;DIRECT";
 }
