@@ -1,3 +1,70 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: ':9090'
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+  fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query',
+    'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853', 'tls://1.0.0.1:853', 'tls://dns.google:853']
+  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32]}
+proxies:
+  - {name: '剩余流量：30.44 GB', type: ss, server: hk01.365003.xyz, port: 10011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '距离下次重置剩余：5 天', type: ss, server: hk01.365003.xyz, port: 10011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: 套餐到期：2025-03-16, type: ss, server: hk01.365003.xyz, port: 10011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇭🇰 HK 香港 01 Pro', type: ss, server: hk01.365003.xyz, port: 10011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇭🇰 HK 香港 02 Pro', type: ss, server: hk02.365003.xyz, port: 10012, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇭🇰 HK 香港 03 Pro', type: ss, server: hk03.365003.xyz, port: 10013, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇭🇰 HK 香港 04 Pro', type: ss, server: hk04.365003.xyz, port: 10014, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇭🇰 HK 香港 05 Pro', type: ss, server: hk05.365003.xyz, port: 10015, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇭🇰 HK 香港 06 Pro', type: ss, server: hk06.365003.xyz, port: 10016, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇸🇬 SG 新加坡 01 Pro', type: ss, server: sg01.365003.xyz, port: 20011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇸🇬 SG 新加坡 02 Pro', type: ss, server: sg02.365003.xyz, port: 20012, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇸🇬 SG 新加坡 03 Pro', type: ss, server: sg03.365003.xyz, port: 20013, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇯🇵 JP 日本 01 Pro', type: ss, server: jp01.365003.xyz, port: 30011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇺🇸 US 美国 01 Pro', type: ss, server: us01.365003.xyz, port: 40011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇨🇳 TW 台湾 Pro', type: ss, server: tw01.365003.xyz, port: 50011, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+  - {name: '🇰🇷 KR 韩国 Pro', type: ss, server: kr01.365003.xyz, port: 50012, cipher: aes-256-gcm,
+    password: 4675e588-0647-4e96-b28e-317237ec0506, udp: true}
+proxy-groups:
+  - {name: '🌈 365Cloud', type: select, proxies: ['🚀️ 自动选择', '🛰️ 全球直连', '剩余流量：30.44
+        GB', '距离下次重置剩余：5 天', 套餐到期：2025-03-16, '🇭🇰 HK 香港 01 Pro', '🇭🇰 HK 香港 02 Pro',
+      '🇭🇰 HK 香港 03 Pro', '🇭🇰 HK 香港 04 Pro', '🇭🇰 HK 香港 05 Pro', '🇭🇰 HK 香港 06 Pro',
+      '🇸🇬 SG 新加坡 01 Pro', '🇸🇬 SG 新加坡 02 Pro', '🇸🇬 SG 新加坡 03 Pro', '🇯🇵 JP 日本 01 Pro',
+      '🇺🇸 US 美国 01 Pro', '🇨🇳 TW 台湾 Pro', '🇰🇷 KR 韩国 Pro']}
+  - {name: '🚀️ 自动选择', type: url-test, url: 'http://www.gstatic.com/generate_204',
+    interval: 300, proxies: ['剩余流量：30.44 GB', '距离下次重置剩余：5 天', 套餐到期：2025-03-16, '🇭🇰
+        HK 香港 01 Pro', '🇭🇰 HK 香港 02 Pro', '🇭🇰 HK 香港 03 Pro', '🇭🇰 HK 香港 04 Pro', '🇭🇰
+        HK 香港 05 Pro', '🇭🇰 HK 香港 06 Pro', '🇸🇬 SG 新加坡 01 Pro', '🇸🇬 SG 新加坡 02 Pro',
+      '🇸🇬 SG 新加坡 03 Pro', '🇯🇵 JP 日本 01 Pro', '🇺🇸 US 美国 01 Pro', '🇨🇳 TW 台湾 Pro', '🇰🇷
+        KR 韩国 Pro']}
+  - {name: '🛰️ 全球直连', type: select, proxies: [DIRECT, '剩余流量：30.44 GB', '距离下次重置剩余：5
+        天', 套餐到期：2025-03-16, '🇭🇰 HK 香港 01 Pro', '🇭🇰 HK 香港 02 Pro', '🇭🇰 HK 香港 03 Pro',
+      '🇭🇰 HK 香港 04 Pro', '🇭🇰 HK 香港 05 Pro', '🇭🇰 HK 香港 06 Pro', '🇸🇬 SG 新加坡 01 Pro',
+      '🇸🇬 SG 新加坡 02 Pro', '🇸🇬 SG 新加坡 03 Pro', '🇯🇵 JP 日本 01 Pro', '🇺🇸 US 美国 01 Pro',
+      '🇨🇳 TW 台湾 Pro', '🇰🇷 KR 韩国 Pro']}
 rule-providers:
   reject:
     type: http
