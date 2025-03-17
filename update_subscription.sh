@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. 使用 curl 获取订阅内容
-SUBSCRIPTION_URL="https://svip.365cloud.me/api/v1/client/subscribe?token=3e4c357717b14920206609a28ceb389f"
+SUBSCRIPTION_URL="https://www.super-plane.top/api/v1/client/subscribe?token=25e8255772f4adfb7545b01c1455cce7"
 
 # 2. 下载订阅内容并保存为临时文件
 TEMP_FILE=$(mktemp)
