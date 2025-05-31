@@ -1,7 +1,5 @@
-status: "fail"
-message: "token is error"
-data: null
-error: null
+<html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not Found</h1></center>
+  <hr><center>nginx/1.18.0</center> </body> </html>
 rule-providers:
   reject:
     type: http
